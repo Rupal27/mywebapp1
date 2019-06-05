@@ -1,0 +1,51 @@
+﻿@model Shared_Library.DTO.LoginUserDTO
+@{
+    ViewBag.Title = "UserWelcomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form>
+    <input type="button" value="Back" onclick="history.back()">
+</form>
+
+<div>
+    <h3> User Details </h3>
+    @Html.ActionLink("Log Out", "LoginUser", "User")
+    <hr />
+    <table class="table">
+        <tr>
+
+            <th>
+
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+
+        </tr>
+
+
+        <dl class="dl-horizontal">
+
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.FullName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditIt", "User", new { userId = Model.ID }, null)
+                </td>
+
+            </tr>
+
+
+        </dl>
+
+</div>
+
+
+
